@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+ {% load static  %}
+
+
+ {% block titulo %}
+    ingresar una productora!                    
+ {% endblock titulo %}
+
+
+
+{% block contenido %}
+<center><h2>Agregar Nueva Productora</h2></center>
+<center>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table}}
+        </table><p></p>
+        <button type="submit" class="btn btn-primary">Guardar Registro</button>
+    </form>
+</center>
+{% endblock contenido %}

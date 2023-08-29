@@ -1,0 +1,48 @@
+{% extends 'app/base.html' %}
+
+ {% load static  %}
+
+ 
+ {% block titulo %}
+ 
+    Sección Peliculas! 
+ 
+ {% endblock titulo %}
+
+
+ {% block contenido %}
+              
+    <center><h3>Registro de Peliculas</h3></center>
+ 
+<center>
+   <table class="table table-info">
+      <thead>
+         <tr>
+            <th>ID</th>
+            <th>Nombre Pelicula</th>
+            <th>Fecha de Estreno</th>
+            <th>Productora</th>
+            <th>Genero</th>
+         </tr>
+      </thead>
+
+      <tbody>  
+            {% for peli in peliculas  %}
+               <tr>
+                  <td>{{peli.id}}</td>
+                  <td>{{peli.nombre}}</td>
+                  <td>{{peli.fecha_estreno  }}</td>
+                  <td>{{peli.productora}}</td>
+                  <td>{{peli.genero}}</td>
+               </tr>
+            {% endfor %}
+      </tbody>
+   </table>
+</center>
+
+   
+ Fecha de Hoy: {% now "d / m / y"    %}
+
+    
+ {% endblock contenido %}
+

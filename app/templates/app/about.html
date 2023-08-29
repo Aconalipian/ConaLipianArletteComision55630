@@ -1,0 +1,52 @@
+{% extends 'app/about_base.html' %}
+ {% load static  %}
+
+ {% block titulo %}
+ conocernos!
+ {% endblock titulo %}
+ {% block contenido %}
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Nuestro Equipo</h2>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="{% static  'app/images/arlette2.jpg' %}" alt="..." />
+                        <h4>Arlette Cona Lipian</h4><p class="text-muted">Alumna comisión 55630</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/arlette-catherine-c-34274525a/" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+  
+               
+              </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">
+                        Mi nombre es Arlette, vivo en Santiago de Chile y actualmente me desempeño como Ingeniera en el área Informatica
+                        de un banco. Mi motivación para tomar el curso fue algo muy personal, llevo un tiempo trabajando con bases de datos, así que
+                        deseo ampliar mis conocimientos para manejar grandes volumenes de datos y pasarme al área de ciencia de datos.
+                        <p class="large text-muted">
+                        Voy a seguir aprendiendo de Python, porque me ha gustado mucho el lenguaje y se ha transformado en pieza clave para facilitar
+                        el trabajo con data.
+                      </p>
+                      <p class="large text-muted">
+                        Las clases me resultaron muy entretenidas, aprendí bastante. No tenía muchas espectativas al respecto, ya que Nunca he trabajado como devops
+                        pero tengo las nociones básicas de otros lenguajes, programar se ha hecho más fácil y lúdico, por lo que me resulto bastante entretenido de aprender.
+                        Estoy feliz de haber terminado el curso, me siento muy comforme con lo aprendido, el tiempo paso muy rapido, deseo seguir mejorando python para mi futuro 
+                        portafolio, al igual que seguir mejorando este sitio para alguna idea de negocio.</p>
+                        <p class="large text-muted">
+                        Les dejo un abrazo a la distancia, muchas gracias por la ayuda y paciencia ya que suelo ser muy preguntona cuando algo me interesa.
+                        Mucho éxito a todos!</p>
+
+                    </p></div>
+            </div>
+        </div>
+    </section>
+
+
+      {% endblock contenido %}

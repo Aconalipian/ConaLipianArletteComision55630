@@ -1,0 +1,74 @@
+{% extends 'app/base.html' %}
+ {% load static  %}
+
+
+ {% block titulo %}
+    Sección Directores!
+                    
+ {% endblock titulo %}
+
+
+ {% block contenido %}
+ <br>               
+    <center><h3>Registro Directores</h3></center>
+ <br>
+    
+      <table>
+         <tr>             
+             <td>
+                 <a
+                 href="{% url 'create_director'  %}"
+                 class="btn btn-primary btn-sm"
+                 ><i class="fa fa-plus fa-lg" title="New Record"> </i>
+                 </a>
+             </td>
+         </tr>
+     </table>
+
+
+
+
+      <table class="table table-info">
+         <thead>
+            <tr>
+               <th>Id</th>
+               <th>Nombre Director</th>
+               <th>Nacionalidad</th>
+               <th>Acciones</th>
+            </tr>
+         </thead>
+   
+         <tbody>  
+               {% for elemento in cdirector_list  %}
+                  <tr>
+                     <td>{{elemento.id}}</td>
+                     <td>{{elemento.nombre}}</td>
+                     <td>{{elemento.nacionalidad}}</td>
+                     <td>
+                        <a
+                           href="{% url 'update_director' elemento.id %}"
+                           class="btn btn-primary"
+                           style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                           ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                        </a>
+                        <a
+                           href="{% url 'delete_director' elemento.id %}"
+                           class="btn btn-danger"
+                           style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                           ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                       </a>
+                     </td>
+                  </tr>
+               {% endfor %}
+         </tbody>
+      </table>
+   
+   
+      
+  {{ titulo | capfirst }}  Fecha de Hoy: {% now "d / m / y"    %}
+   
+
+    
+ {% endblock contenido %}
+    
+   

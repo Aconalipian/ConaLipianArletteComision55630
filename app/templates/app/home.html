@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+
+ {% load static  %}
+ 
+ {% block titulo %}
+  Home                  
+ {% endblock titulo %}
+
+ {% block contenido %}                      
+    <center>
+                                <!-- About-->
+                                <section class="page-section" id="about">
+                                  <div class="container">
+                                      <div class="text-center">
+                                          <h1 class="section-heading">Nuestra Mision</h1>
+                                          
+                                      </div>
+                                      
+                                      <ul class="timeline">
+                                          <li>
+                                              <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'app/assets/img/about/1.jpg' %}" alt="..." /></div>
+                                              <div class="timeline-panel">
+                                                  <div class="timeline-heading">                                                              
+                                                      <h4 class="subheading">Proyecto Final de curso de Python</h4>
+                                                  </div>
+                      
+                                                  <div class="timeline-body"><p class="text-muted">
+                                                    <p>Bienvenido al site de mi proyecto final de Python, el proposito de este site es demostrar
+                                                    lo aprendido en clases referente al lenguaje, cumpliendo  con todas las aristas                                                  
+                                                    solicitadas por el profesor en la última clase.</p>
+                                                    <br>
+                                                    <p>Deseo hacer de este sitio un fanpage de cine de animación, que pueda compartir en mi portafolio.
+                                                        <br>
+                                                    Mi misión es seguir aprendiendo y mejorando el sitio.</p>
+                                                    <br>
+                                                    <p>Muchas Gracias!</p></p>
+                                                  </div>                                                   
+                                                </div>
+                                            </li>                                                    
+                                              
+                                            <li class="timeline-inverted">
+                                                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'app/assets/img/about/2.jpg' %}" alt="..." /></div> 
+                                                <div class="timeline-panel"></div>                                                                                       
+                                            </li>                                                                                                                 
+                                       </ul>
+                                  </div>
+                              </section> 
+   </center>    
+ {% endblock contenido %}
+    
+   

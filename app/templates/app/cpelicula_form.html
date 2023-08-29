@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %} 
+{% load static %} 
+{% block titulo %}Peliculas{% endblock titulo %} 
+
+{% block contenido %}
+<center>
+    <h2>Agregar Registro Película</h2>
+
+    <form action="" method="POST">
+        {% csrf_token %} 
+        <table>
+            {{ form.as_table }}
+        </table><p></p>
+        <!--<input type="submit" value="Guardar Registro">-->
+        <button type="submit" class="btn btn-primary">Guardar Registro</button>
+    </form>
+</center>
+ 
+      
+  {{ titulo | capfirst }}  Fecha de Hoy: {% now "d / m / y"    %}
+      
+ {% endblock contenido %}
+    

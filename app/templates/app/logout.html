@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+ {% load static  %}
+
+
+ {% block titulo %}
+        Logout  
+ {% endblock titulo %}
+
+
+
+{% block contenido %}
+    <center><h2 class="my-4">Logout</h2><br> 
+    
+
+        <div class="col-md-4">
+            <span class="fa-stack fa-2x">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+            </span>
+            
+            
+        </div>
+        <br><br><br>
+
+
+         <!--<img src="" class="rounded mx-auto d-block" alt="...">-->
+        
+       <h2><p style="color: firebrick;">Has cerrado tu sesión exitosamente!</p></h2>
+    </center>
+{% endblock contenido %}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Proyecto Final Comision 55630</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Caveat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Caveat:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'app/css/styles.css'  %}" rel="stylesheet" />
+        <!-- Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+        <!-- tables (includes Bootstrap)-->
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />-->
+
+    </head>
+
+    <body id="page-top">   
+         <!--para navegar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">                 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About us</a></li>                        
+                                             
+                        {%  if user.is_authenticated %}                                
+                            <li class="nav-item"><a class="nav-link" href="{% url 'pelicula' %}">Peliculas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'director' %}">Directores</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'productoras' %}">Productoras</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'agregar_avatar' %}">Avatar</a></li>                            
+                            <p style="color:goldenrod">Hola {{user.username}}!</p>
+
+                            <div class="text-center">
+                                <img src="{{ request.session.avatar }}" height="40px" weight="40px"/>
+                            </div>
+
+                            <li class="nav-item"><a class="btn btn-primary" href="{% url 'edita_perfil' %}">Perfil</a></li>
+                            <li class="nav-item"><a class="btn btn-primary" href="{% url 'logout' %}">Logout</a></li>                                
+                        {% else %}
+                            <li class="nav-item"><a class="btn btn-info" href="{% url 'registrar' %}">Sign Up</a></li>
+                            <li class="nav-item"><a class="btn btn-info" href="{% url 'login' %}">Login</a></li>
+                            
+                        {%  endif  %}
+
+                        
+                    </ul>
+               </div>
+           </div>
+        </nav>
+
+
+             <!-- Masthead--> 
+             <header class="masthead">
+                <div class="container">
+                    <h2>               
+                        
+                         <div class="masthead-subheading">Bienvenido a 
+                            {% block titulo %}
+
+
+                            {% endblock titulo %}
+                         </div>
+                            <a class="btn btn-info text-uppercase" href="{% url 'buscar' %}">Buscar</a> 
+                                                             
+                   </h2>
+                </div>
+        </header> 
+       
+           
+        {% block contenido %}
+
+
+
+
+
+        {% endblock contenido %}
+
+
+                            
+                           
+
+
+        {% block piepagina %}       
+                <!-- Footer-->
+                <footer class="footer py-4">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 text-lg-start">Copyright &copy; Todos los derechos reservados 2023</div>
+                            <div class="col-lg-4 text-lg-end">
+                                <a class="link-dark text-decoration-none me-3" href="#!">Políticas de privacidad</a>
+                                <a class="link-dark text-decoration-none" href="#!">Términos de uso</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+        {% endblock piepagina %} 
+                <!-- Bootstrap core JS-->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+                <!-- Core theme JS-->
+                <script src="{% static 'js/scripts.js' %}"></script>
+                <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+                <!-- * *                               SB Forms JS                               * *-->
+                <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+                <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+                <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>      
+   
+    </body>
+</html>

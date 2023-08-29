@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+ {% load static  %}
+
+
+ {% block titulo %}
+    Títulos disponibles...
+              
+ {% endblock titulo %}
+
+{% block contenido %}
+    <br>
+    <br>
+    <center> <h3>¿Deseas realizar la búsqueda de una película?</h3></center>
+    <center>
+        <form action="/buscar2" method="get" >
+            {% csrf_token %}
+
+            <p>Ingresa un patrón a buscar: <input type="text" name="buscar" id="buscar" required><button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+   </center>
+
+{% endblock contenido %}

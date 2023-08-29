@@ -1,0 +1,71 @@
+{% extends 'app/base.html' %}
+ {% load static  %}
+
+
+ {% block titulo %}
+    Sección administración películas!
+                    
+ {% endblock titulo %}
+
+
+ {% block contenido %}
+ <br>               
+    <center><h3>Registro de Películas</h3></center>
+ <br>
+    
+      <table>
+         <tr>             
+             <td>
+                 <a
+                 href="{% url 'create_pelicula'  %}"
+                 class="btn btn-primary btn-sm"
+                 ><i class="fa fa-plus fa-lg" title="Grabar Nuevo Registro"> </i>
+                 </a>
+             </td>
+         </tr>
+     </table>
+     <table class="table table-info">
+         <thead>
+            <tr>
+               <th>Id</th>
+               <th>Nombre Película</th>
+               <th>Fecha de estreno</th>
+               <th>Productora</th>
+               <th>Genero</th>
+               <th>Acciones</th>
+            </tr>
+         </thead>
+   
+         <tbody>  
+               {% for peli in cpelicula_list  %}
+                  <tr>
+                     <td>{{peli.id}}</td>
+                     <td>{{peli.nombre}}</td>
+                     <td>{{peli.fecha_estreno  }}</td>
+                     <td>{{peli.productora}}</td>
+                     <td>{{peli.genero}}</td>
+                     <td>
+                        <a
+                           href="{% url 'update_pelicula' peli.id %}"
+                           class="btn btn-primary"
+                           style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                           ><i class="fa fa-edit fa-sm" title="Editar Registro"></i>
+                        </a>
+                        <a
+                           href="{% url 'delete_pelicula' peli.id %}"
+                           class="btn btn-danger"
+                           style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                           ><i class="fa fa-trash fa-sm" title="Eliminar Registro"></i>
+                       </a>
+                     </td>
+                  </tr>
+               {% endfor %}
+         </tbody>
+      </table>     
+  {{ titulo | capfirst }}  Fecha de Hoy: {% now "d / m / y"    %}
+   
+
+    
+ {% endblock contenido %}
+    
+   

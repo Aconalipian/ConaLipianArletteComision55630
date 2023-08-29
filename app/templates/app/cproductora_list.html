@@ -1,0 +1,72 @@
+{% extends 'app/base.html' %}
+ {% load static  %}
+
+
+ {% block titulo %}
+    Sección Productoras!
+                    
+ {% endblock titulo %}
+
+
+ {% block contenido %}
+ <br>               
+    <center><h3>Registro Productoras</h3></center>
+ <br>
+    
+      <table>
+         <tr>             
+             <td>
+                 <a
+                 href="{% url 'create_productora'  %}"
+                 class="btn btn-primary btn-sm"
+                 ><i class="fa fa-plus fa-lg" title="Grabar Nuevo Registro"> </i>
+                 </a>
+             </td>
+         </tr>
+     </table>
+
+
+
+
+      <table class="table table-info">
+         <thead>
+            <tr>
+               <th>Id</th>
+               <th>Nombre Productora</th>
+               <th>Pais de origen</th>               
+               <th>Acciones</th>
+            </tr>
+         </thead>
+   
+         <tbody>  
+               {% for produc in cproductora_list  %}
+                  <tr>
+                     <td>{{produc.id}}</td>
+                     <td>{{produc.nombre}}</td>
+                     <td>{{produc.pais}}</td>                     
+                     <td>
+                        <a
+                           href="{% url 'update_productora' produc.id %}"
+                           class="btn btn-primary"
+                           style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                           ><i class="fa fa-edit fa-sm" title="Editar Registro"></i>
+                        </a>
+                        <a
+                           href="{% url 'delete_productora' produc.id %}"
+                           class="btn btn-danger"
+                           style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                           ><i class="fa fa-trash fa-sm" title="Eliminar Registro"></i>
+                       </a>
+                     </td>
+                  </tr>
+               {% endfor %}
+         </tbody>
+      </table>
+   
+   
+      
+  {{ titulo | capfirst }}  Fecha de Hoy: {% now "d / m / y"    %}
+   
+
+    
+ {% endblock contenido %}
