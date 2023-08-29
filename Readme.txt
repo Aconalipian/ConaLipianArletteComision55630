@@ -76,6 +76,6 @@ hay una sección de búsqueda que trae las películas registradas en el repo pel
 
 
 video compartido en loom:
-https://www.loom.com/share/21988bf0b97347b795c831964d49b731?t=288&sid=c17d96e5-f574-4359-a5f0-f4b9f13da279
+https://www.loom.com/share/ad9c53e3f50141b28fd5956bf03c0f6c
 
 
